@@ -5,10 +5,10 @@ public class replaceChar {
         Scanner sc = new Scanner(System.in);
         String s = sc.nextLine();
         char str[] = s.toCharArray();
-        char ch = sc.next().charAt(0);
+        char ch1 = sc.next().charAt(0);
         char ch2 = sc.next().charAt(0);
         for(int i=0;i<str.length;i++){
-            if(str[i]==ch){
+            if(str[i]==ch1){
                 str[i]=ch2;
             }
         }

@@ -1,37 +1,41 @@
-/* for input
-nextLine()
-nextBoolean()
-nextByte()
-nextDouble()
-nextFloat()
-nextInt()
-nextLong()
-nextShort()
-next().charAt(0)
-*/
-import java.util.Scanner;
+import java.util.*;
 
-class employee{
-    public static void main(String args[]){
-        Scanner obj = new Scanner(System.in);
-        String name;
-        int age;
-        float salary;
-        char grade;
-        System.out.println("Enter Name: ");
-        name = obj.nextLine();
-        System.out.println("Enter age: ");
-        age = obj.nextInt();
-        System.out.println("Enter Salary: ");
-        salary = obj.nextFloat();
-        System.out.println("Enter Grade: ");
-        grade = obj.next().charAt(0);
+public class employee {
+    public static void main(String[] args) {
+        Scanner input=new Scanner(System.in);
+        int row=input.nextInt();
+        int arr[][]=new int[row][2];
+        if(row>=1 & row<=10){
+            for(int i=0;i<row;i++){
+                for(int j=0;j<2;j++){
 
-        System.out.println("Name: "+ name);
-        System.out.println("Age: "+age);
-        System.out.println("Salary: "+salary);
-        System.out.println("Grade: "+grade);
-
-        obj.close();
+                    int l = input.nextInt();
+                    if(j==0){
+                        if(l<=100 & l>=1){  // 10 <= id <= 1000 ;
+                            arr[i][j]=l;
+                        }
+                        else{
+                            System.out.println("Invalid data");
+                        }
+                    }
+                    if(j==1){
+                        if(l<=50 & l>=18){  //  18 <= age <= 50
+                            arr[i][j]=l;
+                        }
+                        else{
+                            System.out.println("Invalid data");
+                        }
+                    }
+                }
+            }
+            for(int k=0;k<row;k++){
+                if(arr[k][1]<30){
+                    System.out.println(arr[k][1]);
+                }
+            }
+        }
+        else{
+            System.out.println("Invalid input");
+        }
     }
 }
